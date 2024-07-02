@@ -4,17 +4,15 @@
  * This file pulls from the root "site.config.ts" as well as environment variables
  * for optional depenencies.
  */
-import { parsePageId } from 'notion-utils'
-import { PostHogConfig } from 'posthog-js'
+import { parsePageId } from 'notion-utils';
+import { PostHogConfig } from 'posthog-js';
 
-import { getEnv, getSiteConfig } from './get-config-value'
-import { NavigationLink } from './site-config'
-import {
-  NavigationStyle,
-  PageUrlOverridesInverseMap,
-  PageUrlOverridesMap,
-  Site
-} from './types'
+
+
+import { getEnv, getSiteConfig } from './get-config-value';
+import { NavigationLink } from './site-config';
+import { NavigationStyle, PageUrlOverridesInverseMap, PageUrlOverridesMap, Site } from './types';
+
 
 export const rootNotionPageId: string = parsePageId(
   getSiteConfig('rootNotionPageId'),
@@ -110,7 +108,7 @@ export const navigationLinks: Array<NavigationLink | null> = getSiteConfig(
 )
 
 // Optional site search
-export const isSearchEnabled: boolean = getSiteConfig('isSearchEnabled', true)
+export const isSearchEnabled: boolean = getSiteConfig('isSearchEnabled', false)
 
 // ----------------------------------------------------------------------------
 

@@ -201,6 +201,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   )
 
   const footer = React.useMemo(() => <Footer />, [])
+  // const header = React.useMemo(() => <PageHead />, [])
 
   if (router.isFallback) {
     return <Loading />
@@ -278,6 +279,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
+        pageTitle={title}
+        // pageHeader={header}
         footer={footer}
       />
 
